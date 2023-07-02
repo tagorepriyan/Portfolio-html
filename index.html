@@ -2,16 +2,86 @@
 <html lang="en">
 <head>
     <title>Portfolio Project</title>
+    <style>
+        body {
+            background: linear-gradient(to bottom right, #ff99cc, #cc99ff);
+            font-family: Arial, sans-serif;
+            position: relative;
+        }
+        
+        h1 {
+            color: #ffffff;
+            text-align: center;
+            text-shadow: 2px 2px 4px #000000;
+        }
+        
+        h2 {
+            color: #ffffff;
+            text-align: center;
+            text-shadow: 2px 2px 4px #000000;
+        }
+        
+        hr {
+            border: none;
+            height: 1px;
+            background-color: #ffffff;
+            margin: 20px 0;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #ffffff;
+            text-shadow: 1px 1px 2px #000000;
+        }
+        
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #ffffff;
+            color: #000000;
+            border-radius: 20px;
+            margin: 10px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .button:hover {
+            background-color: #ff99cc;
+        }
+        
+        footer {
+            text-align: center;
+            color: #ffffff;
+            background-color: #000000;
+            padding: 10px;
+        }
+        
+        .profile-photo {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            box-shadow: 2px 2px 4px #000000;
+        }
+    </style>
 </head>
 <body>
+    <img class="profile-photo" src="./assets/images/WhatsApp Image 2023-07-02 at 11.04.22.jpg" alt="Profile Photo">
     <h1>Tagorepriyan's Portfolio</h1>
     <h2>I'm a Web developer</h2>
     <hr/>
-    <h2><a href="./public/movie-ranking.html">My Favorite Movies</a> </h2>
-     <img src="./assets/images/Movie web.png" alt="Favorite Movies website's preview image" height="300" width="300"/>
+    <h2><a href="./public/movie-ranking.html">My Favorite Movies</a></h2>
+    <img src="./assets/images/fav movie.png" alt="Favorite Movies website's preview image" height="275" width="350"/>
     <h2><a href="./public/birthday-invite.html">Birthday Party Invitation</a></h2>
-     <img src="./assets/images/Birthday web.png" alt="Birthday Party Invitation website's preview image" height="300" width="300"/>
-  <hr/>
-    <h3><a href="./public/about.html">About Me</a> <a href="./public/contact.html">Contact Me</a> </h3>
+    <img src="./assets/images/b-wish.png" alt="Birthday Party Invitation website's preview image" height="275" width="350"/>
+    <hr/>
+    <h3>
+        <a class="button" href="./public/about.html">About Me</a>
+        <a class="button" href="./public/contact.html">Contact Me</a>
+    </h3>
+    <footer>
+        &copy; 2023 Tagorepriyan. All rights reserved.
+    </footer>
 </body>
 </html>
