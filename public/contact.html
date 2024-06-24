@@ -1,81 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2214665681464017"
-     crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../styles.css">
+  <script src="script.js"></script>
   <style>
-    body {
-      background: linear-gradient(to bottom, #ff9999, #ff66cc);
-      font-family: Arial, sans-serif;
-    }
-
-    h1 {
-      text-align: center;
-      color: white;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    }
-
-    p {
-      text-align: center;
-      color: white;
-    }
-
-    .button {
-      display: inline-block;
-      padding: 10px 20px;
-      background: linear-gradient(to bottom right, #00ccff, #cc33ff);
-      border-radius: 10px;
-      color: white;
-      font-weight: bold;
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-      cursor: pointer;
-    }
-
     .copy-button {
       margin: 10px;
-    }
-
-    .footer {
-      text-align: center;
-      color: white;
-      font-size: 12px;
-      margin-top: 50px;
     }
   </style>
 </head>
 <body>
   <h1><b>Contact Me</b></h1>
+<div>
   <p><b>Phone no.:</b> +91 6383759915</p>
-  <button class="button copy-button" onclick="copyPhoneNumber()">Copy Phone Number</button>
+  <button class="btn copy-button btn-gradient-border btn-glow" onclick="copyPhoneNumber()">Copy Phone Number</button>
   <p><b>Email:</b> tagorepryansaravanavel@gmail.com</p>
-  <button class="button copy-button" onclick="copyEmail()">Copy Email</button>
+  <button class="btn copy-button btn-gradient-border btn-glow" onclick="copyEmail()">Copy Email</button>
   <p><b>Address:</b></p>
   <p>
     No.2, Azhagu garden <br />
     Patchannapuram<br />
     Lalgudi, Tiruchirapalli - 621601 <br />
   </p>
-  <button class="button" onclick="goBack()">Go Back</button>
-  <footer class="footer">&copy; Tagorepriyan. All rights reserved</footer>
-
-  <script>
-    function copyPhoneNumber() {
-      var phoneNumber = "+91 6383759915";
-      navigator.clipboard.writeText(phoneNumber).then(function() {
-        alert("Phone number copied!");
-      });
-    }
-
-    function copyEmail() {
-      var email = "tagorepryansaravanavel@gmail.com";
-      navigator.clipboard.writeText(email).then(function() {
-        alert("Email copied!");
-      });
-    }
-
-    function goBack() {
-      window.location.href = "../index.html";
-    }
-  </script>
+  <button class="btn btn-gradient-border btn-glow" onclick="goBack()">Go Back</button>
+</div>
+<footer>
+    &copy; 2023 Tagorepriyan. All rights reserved.
+</footer>
 </body>
 </html>
