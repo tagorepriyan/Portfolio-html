@@ -1,5 +1,5 @@
 body {
-    background: linear-gradient(to bottom right, #ff99cc, #cc99ff);
+    background-image: linear-gradient(90deg, #232526, #414345);
     font-family: Arial, sans-serif;
     position: relative;
 }
@@ -41,7 +41,7 @@ p {
 footer {
     text-align: center;
     color: #ffffff;
-    background-color: #b478ba;
+    background-image: linear-gradient(180deg, #000000, #2C272E);
     padding: 10px;
 }
 
