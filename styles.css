@@ -1,0 +1,84 @@
+body {
+    background: linear-gradient(to bottom right, #ff99cc, #cc99ff);
+    font-family: Arial, sans-serif;
+    position: relative;
+}
+
+h1 {
+    color: #ffffff;
+    text-align: center;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+h2 {
+    color: #ffffff;
+    text-align: center;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: #ffffff;
+    margin: 20px 0;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+    text-shadow: 1px 1px 2px #000000;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 20px 0;
+    text-align: justify;
+  }
+
+
+/*footer*/
+footer {
+    text-align: center;
+    color: #ffffff;
+    background-color: #b478ba;
+    padding: 10px;
+}
+
+/*Profile pic*/
+.profile-photo {
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    margin: 20px auto;
+    display: block;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/*button*/
+.btn {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px;
+    padding: 12px 32px;
+    margin: 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    border-radius: 50px;
+}
+
+.btn-gradient-border {
+    color: rgba(var(--text-color));
+    border: 2px double transparent;
+    background-image: linear-gradient(rgb(13, 14, 33), rgb(13, 14, 33)), radial-gradient(circle at left top, rgb(1, 110, 218), rgb(217, 0, 192));
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+}
+
+.btn-glow:hover {
+    box-shadow: rgba(var(--primary-color), 0.5) 0px 0px 20px 0px;
+}
+  
+.btn:hover {
+   transition: all 0.3s ease;
+}
