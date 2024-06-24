@@ -9,7 +9,7 @@
     }
 }
 body {
-    background: linear-gradient(72.3deg, rgb(29, 7, 64) 8.5%, rgb(253, 105, 139) 92.2%);
+    background: linear-gradient(109.6deg, rgb(43, 1, 91) 13.4%, rgb(122, 2, 54) 100.2%);
     font-family: Arial, sans-serif;
     position: relative;
     flex-direction: column;
@@ -99,30 +99,44 @@ footer {
 }
 
 /*button*/
+/* Button styles */
 .btn {
-    font-family: 'DM Sans', sans-serif;
     font-size: 18px;
     padding: 12px 32px;
     margin: 1rem;
     cursor: pointer;
-    border-radius: 4px;
-    transition: all 0.3s ease;
     border-radius: 50px;
-    
-}
-
-.btn-gradient-border {
-    color: rgba(var(--text-color));
     border: 2px double transparent;
     background-image: linear-gradient(rgb(13, 14, 33), rgb(13, 14, 33)), radial-gradient(circle at left top, rgb(1, 110, 218), rgb(217, 0, 192));
     background-origin: border-box;
     background-clip: padding-box, border-box;
+    color: rgba(255, 255, 255, 0.87);
+    transition: all 0.3s ease;
 }
 
-.btn-glow:hover {
-    box-shadow: rgba(var(--primary-color), 0.5) 0px 0px 20px 0px;
-}
-  
 .btn:hover {
-   transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(164, 24, 211, 0.5); /* Adjust the shadow color and size as needed */
+}
+
+/* Glow effect */
+.btn.btn-glow {
+    position: relative; /* Ensure proper stacking context for pseudo-elements */
+}
+
+.btn.btn-glow::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: inherit;
+    background: rgba(157, 17, 204, 0.2); /* Adjust the glow color and opacity as needed */
+    z-index: -1; /* Behind the button content */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.btn.btn-glow:hover::before {
+    opacity: 1;
 }
