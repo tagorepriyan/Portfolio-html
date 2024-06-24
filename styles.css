@@ -1,30 +1,17 @@
-
-@media (max-width: 600px) {
-    .profile-photo {
-        position: relative;
-        top: 0;
-        right: 0;
-        margin: 20px auto; /* Center the image horizontally */
-        display: block;
-    }
-}
 body {
     background: linear-gradient(109.6deg, rgb(43, 1, 91) 13.4%, rgb(122, 2, 54) 100.2%);
     font-family: 'IBM Plex Mono', monospace;
+    color: #ffffff;
     position: relative;
     flex-direction: column;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+    text-align: center;
     justify-content: center;
-    align-items: center;
-    min-height: 100vh;
     margin: 0px;
     padding: 0%;
-    color: white;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
-
 h1 {
     color: #ffffff;
     margin-bottom: 20px;
@@ -142,88 +129,38 @@ footer {
     opacity: 1;
 }
 
-/*font*/
-.ibm-plex-mono-thin {
-    font-family: "IBM Plex Mono", monospace;
-    font-weight: 100;
-    font-style: normal;
-  }
-  
-  .ibm-plex-mono-extralight {
-    font-family: "IBM Plex Mono", monospace;
-    font-weight: 200;
-    font-style: normal;
-  }
-  
-  .ibm-plex-mono-light {
-    font-family: "IBM Plex Mono", monospace;
-    font-weight: 300;
-    font-style: normal;
-  }
-  
-  .ibm-plex-mono-regular {
-    font-family: "IBM Plex Mono", monospace;
-    font-weight: 400;
-    font-style: normal;
-  }
-  
-  .ibm-plex-mono-medium {
-    font-family: "IBM Plex Mono", monospace;
-    font-weight: 500;
-    font-style: normal;
-  }
-  
-  .ibm-plex-mono-semibold {
-    font-family: "IBM Plex Mono", monospace;
-    font-weight: 600;
-    font-style: normal;
-  }
-  
-  .ibm-plex-mono-bold {
-    font-family: "IBM Plex Mono", monospace;
-    font-weight: 700;
-    font-style: normal;
-  }
-  
-  .ibm-plex-mono-thin-italic {
-    font-family: "IBM Plex Mono", monospace;
-    font-weight: 100;
-    font-style: italic;
-  }
-  
-  .ibm-plex-mono-extralight-italic {
-    font-family: "IBM Plex Mono", monospace;
-    font-weight: 200;
-    font-style: italic;
-  }
-  
-  .ibm-plex-mono-light-italic {
-    font-family: "IBM Plex Mono", monospace;
-    font-weight: 300;
-    font-style: italic;
-  }
-  
-  .ibm-plex-mono-regular-italic {
-    font-family: "IBM Plex Mono", monospace;
-    font-weight: 400;
-    font-style: italic;
-  }
-  
-  .ibm-plex-mono-medium-italic {
-    font-family: "IBM Plex Mono", monospace;
-    font-weight: 500;
-    font-style: italic;
-  }
-  
-  .ibm-plex-mono-semibold-italic {
-    font-family: "IBM Plex Mono", monospace;
-    font-weight: 600;
-    font-style: italic;
-  }
-  
-  .ibm-plex-mono-bold-italic {
-    font-family: "IBM Plex Mono", monospace;
-    font-weight: 700;
-    font-style: italic;
-  }
-  
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .profile-pic {
+        display: block;
+        position: static;
+        margin: 20px auto;
+        width: 120px;
+    }
+
+    .profile-photo {
+        max-width: 50%;
+    }
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 32px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    .profile-pic {
+        width: 100px;
+    }
+
+    .profile-photo {
+        max-width: 80%;
+    }
+
+    .contact-container {
+        padding: 10px;
+    }
+}
