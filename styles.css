@@ -9,7 +9,7 @@
     }
 }
 body {
-    background-image: linear-gradient(135deg, #000000, #434343);
+    background: linear-gradient(72.3deg, rgb(29, 7, 64) 8.5%, rgb(253, 105, 139) 92.2%);
     font-family: Arial, sans-serif;
     position: relative;
     flex-direction: column;
