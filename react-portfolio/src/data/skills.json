@@ -3,6 +3,6 @@
   {"name": "Frontend", "items": ["HTML", "CSS", "Tailwind", "React"]},
   {"name": "Backend", "items": ["Node", "Express"]},
   {"name": "Database", "items": ["MongoDB", "MySQL"]},
-  {"name": "Tools", "items": ["Git", "GitHub", "Postman", "Figma", "Canva"]},
-  {"name": "Other", "items": ["ML basics", "Android Studio basics"]}
+  {"name": "Tools", "items": ["Git", "GitHub", "Postman", "VS Code", "Canva"]},
+  {"name": "Other", "items": ["ML basics"]}
 ]
