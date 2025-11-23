@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom layer */
+
+:root {
+  --radius-2xl: 1.25rem;
+}
+
+body {
+  @apply selection:bg-accent selection:text-accent-foreground;
+}
+
+/* Smooth fade for theme transitions */
+.theme-transition * {
+  transition: background-color .4s ease, color .4s ease, border-color .4s ease;
+}
+
+/* Card utility */
+.card {
+  @apply rounded-2xl shadow-soft dark:shadow-soft-dark bg-white/80 dark:bg-slate-900/70 backdrop-blur border border-slate-200/60 dark:border-slate-700/60;
+}
+
+.btn-base {
+  @apply inline-flex items-center gap-2 rounded-full px-5 py-2.5 font-medium text-sm transition ease-swift disabled:opacity-50 disabled:pointer-events-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent dark:focus-visible:ring-accent;
+}
+
+.btn-solid {
+  @apply btn-base bg-accent text-white shadow-sm hover:shadow-md hover:bg-indigo-600 active:bg-indigo-700;
+}
+
+.btn-outline {
+  @apply btn-base border border-slate-300 dark:border-slate-600 hover:bg-slate-100 dark:hover:bg-slate-800;
+}
+
+.section-padding {
+  @apply py-20 md:py-24;
+}
+
+.section-header {
+  @apply mb-10 flex flex-col gap-3 text-center;
+}
+
+.section-title {
+  @apply text-3xl md:text-4xl font-semibold tracking-tight;
+}
+
+.section-subtitle {
+  @apply text-slate-500 dark:text-slate-400 max-w-2xl mx-auto;
+}

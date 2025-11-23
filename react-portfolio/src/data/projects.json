@@ -1,0 +1,44 @@
+[
+  {
+    "title": "Elderly Fall Risk Predictor",
+    "description": "Machine learning model to predict fall risk among elderly individuals based on health and activity features.",
+    "stack": ["Python", "Pandas", "scikit-learn", "ML"],
+    "github": "https://github.com/tagorepriyan/elderly-fall-risk-predictor",
+    "demo": null
+  },
+  {
+    "title": "Internals & Reward System",
+    "description": "MERN application streamlining internal marks tracking and gamified reward allocation for students.",
+    "stack": ["MongoDB", "Express", "React", "Node", "Tailwind"],
+    "github": "https://github.com/tagorepriyan/internals-reward-system",
+    "demo": null
+  },
+  {
+    "title": "Emergency Alert Android App",
+    "description": "Android application enabling quick emergency alerts and location sharing for personal safety.",
+    "stack": ["Android", "Java", "Firebase"],
+    "github": "https://github.com/tagorepriyan/emergency-alert-app",
+    "demo": null
+  },
+  {
+    "title": "Teezzo Clothing Brand Website",
+    "description": "Responsive brand website prototype for an apparel line showcasing products and story.",
+    "stack": ["HTML", "CSS", "JavaScript"],
+    "github": "https://github.com/tagorepriyan/teezzo-website",
+    "demo": null
+  },
+  {
+    "title": "Portfolio Website",
+    "description": "Personal portfolio presenting projects, skills, achievements, and contact details.",
+    "stack": ["React", "Tailwind", "Framer Motion"],
+    "github": "https://github.com/tagorepriyan/portfolio-react",
+    "demo": null
+  },
+  {
+    "title": "InnovIT 2025 Stranger Things Landing Page",
+    "description": "Themed landing page inspired by Stranger Things for InnovIT 2025 event promotion.",
+    "stack": ["HTML", "CSS", "JavaScript"],
+    "github": "https://github.com/tagorepriyan/innovit-2025-stranger-things",
+    "demo": null
+  }
+]
