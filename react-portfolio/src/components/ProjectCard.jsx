@@ -5,7 +5,13 @@ import { Github, ExternalLink } from 'lucide-react';
 const ProjectCard = ({ project }) => {
   return (
     <motion.div className="card p-6 flex flex-col gap-4" initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.55 }}>
-      <div className="aspect-video w-full rounded-xl bg-slate-200/50 dark:bg-slate-800/50 flex items-center justify-center text-slate-400 text-sm">Image</div>
+      {project.image ? (
+        <div className="aspect-video w-full rounded-xl overflow-hidden bg-slate-200/50 dark:bg-slate-800/50">
+          <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
+        </div>
+      ) : (
+        <div className="aspect-video w-full rounded-xl bg-slate-200/50 dark:bg-slate-800/50 flex items-center justify-center text-slate-400 text-sm">Image</div>
+      )}
       <h3 className="text-lg font-semibold tracking-tight">{project.title}</h3>
       <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-400">{project.description}</p>
       <div className="flex flex-wrap gap-2 text-xs">
