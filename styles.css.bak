@@ -1,0 +1,166 @@
+body {
+    background: linear-gradient(109.6deg, rgb(43, 1, 91) 13.4%, rgb(122, 2, 54) 100.2%);
+    font-family: 'IBM Plex Mono', monospace;
+    color: #ffffff;
+    position: relative;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    margin: 0px;
+    padding: 0%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+h1 {
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-align: center;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+h2 {
+    color: #ffffff;
+    text-align: center;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: #ffffff;
+    margin: 20px 0;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+    text-shadow: 1px 1px 2px #000000;
+}
+
+p{
+    font-size: 18px;
+    line-height: 1.2;
+    margin: 20px 10%;
+    text-align: justify;
+  }
+
+div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 60px; /* Ensure space for the footer */
+}
+
+/*footer*/
+footer {
+    text-align: center;
+    color: #ffffff;
+    background-image: linear-gradient(180deg, #000000, #2C272E);
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+/*Profile pic*/
+/*in index page*/
+.profile-pic {
+    position: absolute;
+    top: 20px; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
+    width: 150px; /* Adjust the size as needed */
+    height: auto;
+    border-radius: 50%; /* Optional: to make the photo circular */
+}
+/*in about me page*/
+.profile-photo {
+    border-radius: 50%;
+    max-width: 20%;
+    height: auto;
+    margin: 20px 0;
+    display: block;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/*button*/
+/* Button styles */
+.btn {
+    font-size: 18px;
+    font-family: 'Roboto Mono', monospace;
+    padding: 12px 32px;
+    margin: 1rem;
+    cursor: pointer;
+    border-radius: 50px;
+    border: 2px double transparent;
+    background-image: linear-gradient(rgb(13, 14, 33), rgb(13, 14, 33)), radial-gradient(circle at left top, rgb(1, 110, 218), rgb(217, 0, 192));
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    color: rgba(255, 255, 255, 0.87);
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    box-shadow: 0 0 20px rgba(164, 24, 211, 0.5); /* Adjust the shadow color and size as needed */
+}
+
+/* Glow effect */
+.btn.btn-glow {
+    position: relative; /* Ensure proper stacking context for pseudo-elements */
+}
+
+.btn.btn-glow::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: inherit;
+    background: rgba(157, 17, 204, 0.2); /* Adjust the glow color and opacity as needed */
+    z-index: -1; /* Behind the button content */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.btn.btn-glow:hover::before {
+    opacity: 1;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .profile-pic {
+        display: block;
+        position: static;
+        margin: 20px auto;
+        width: 120px;
+    }
+
+    .profile-photo {
+        max-width: 50%;
+    }
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 32px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    .profile-pic {
+        width: 100px;
+    }
+
+    .profile-photo {
+        max-width: 80%;
+    }
+
+    .contact-container {
+        padding: 10px;
+    }
+}

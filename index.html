@@ -1,48 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tagorepriyan - Full Stack Web Developer Portfolio showcasing projects, skills, and achievements">
     <meta name="b2653e6c8c2f9d9c6aa36e77a57c7c1d342d107d" content="b2653e6c8c2f9d9c6aa36e77a57c7c1d342d107d" />
-    <script src="script.js"></script>
-    <title>Tagorepriyan's Portfolio</title>
+    <title>Tagorepriyan - Full Stack Web Developer Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<style>
-
-    h1 {
-      font-size: 40px;
-      text-transform: uppercase;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    }
-
-</style>
-
 <body>
-    <img class="profile-pic" src="./assets/images/WhatsApp Image 2023-07-02 at 11.04.22.jpg" alt="Profile Photo">
-    <h1>Tagorepriyan's Portfolio</h1>
-    
-    <h2>👋 Hi, I’m Tagorepriyan</h2>
-    <h2>I'm a Web developer</h2>
-    <h2>👀 I’m interested in Web Development</h2>
-    <h2>🌱 I’m currently learning Full Stack Web Development</h2>
-    <h2><a href="./public/fav_songs.html">Fav songs</a></h2>
-    <h2><a href="https://docs.google.com/document/d/1KRcbjxvVsZQ8SyFeazz7H9y1-fuAhg2SNl0GGnrmNK0/edit?usp=sharing">Click here to view My Projects</a></h2>
-    
-    <!--<a href="./public/fav_songs.html"><img src="./assets/images/fav movie.png" alt="Favorite Movies website's preview image" height="275" width="350"/></a>
-    <h2><a href="./public/birthday-invite.html">2. Birthday Party Invitation-project</a></h2>
-    <a href="./public/birthday-invite.html"><img src="./assets/images/b-wish.png" alt="Birthday Party Invitation website's preview image" height="275" width="350"/></a>-->
-    <h2>Achievments</h2>
-        <li><a href="https://www.linkedin.com/posts/tagorepriyan_techcompetition-innovation-teamwork-activity-7202700508401131520-3s97?utm_source=share&utm_medium=member_desktop">Won project Expo</a></li>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">Tagorepriyan</a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#achievements" class="nav-link">Achievements</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 
-    <div>
-        <a class="btn btn-gradient-border btn-glow" href="./public/about.html">About Me</a>
-        <a class="btn btn-gradient-border btn-glow" href="./public/contact.html">Contact Me</a>        
-    </div>
-    <footer>
-        &copy; 2023 Tagorepriyan.
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-content fade-in">
+            <img class="profile-pic pulse" src="./assets/images/WhatsApp Image 2023-07-02 at 11.04.22.jpg" alt="Tagorepriyan Profile Photo">
+            <h1 class="hero-title slide-up">Hi, I'm <span class="gradient-text">Tagorepriyan</span></h1>
+            <p class="hero-subtitle slide-up delay-1">Full Stack Web Developer | Problem Solver</p>
+            <p class="hero-description slide-up delay-2">🚀 Building innovative web solutions with modern technologies</p>
+            <p class="hero-tagline slide-up delay-3">🌱 Currently mastering the MERN Stack & exploring Data Science</p>
+            <div class="hero-buttons slide-up delay-4">
+                <a href="#projects" class="btn btn-primary btn-glow">View Projects</a>
+                <a href="#contact" class="btn btn-outline btn-glow">Contact Me</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span></span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <p class="about-text">I'm a passionate <strong>Full Stack Web Developer</strong> currently pursuing my B.E. at <strong>St. Joseph's College of Engineering, Chennai</strong>. I specialize in creating responsive, user-friendly web applications with a focus on clean code and innovative solutions.</p>
+                <p class="about-text">Proficient in <strong>HTML, CSS, JavaScript, React, Node.js, Express, and MongoDB</strong>, I transform ideas into immersive digital experiences. My journey in tech is driven by curiosity, continuous learning, and a passion for problem-solving.</p>
+                <a href="./public/about.html" class="btn btn-secondary">Learn More About Me →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section section-dark">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">💻</div>
+                    <h3>Frontend</h3>
+                    <p>HTML5, CSS3, JavaScript, React, Tailwind CSS</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">⚙️</div>
+                    <h3>Backend</h3>
+                    <p>Node.js, Express.js, RESTful APIs</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🗄️</div>
+                    <h3>Database</h3>
+                    <p>MongoDB, MySQL</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🛠️</div>
+                    <h3>Tools</h3>
+                    <p>Git, GitHub, VS Code, Postman, Figma</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🤖</div>
+                    <h3>Other</h3>
+                    <p>Python, ML Basics, Android Studio</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🎨</div>
+                    <h3>Design</h3>
+                    <p>Responsive Design, UI/UX, Canva</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <a href="https://docs.google.com/document/d/1KRcbjxvVsZQ8SyFeazz7H9y1-fuAhg2SNl0GGnrmNK0/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="project-card">
+                    <div class="project-icon">🎵</div>
+                    <h3>Favorite Songs Collection</h3>
+                    <p>Interactive web app showcasing my music preferences</p>
+                    <span class="project-link">View Project →</span>
+                </a>
+                <a href="./public/fav_songs.html" class="project-card">
+                    <div class="project-icon">🎬</div>
+                    <h3>Movie Database</h3>
+                    <p>Curated collection of favorite movies with reviews</p>
+                    <span class="project-link">Explore →</span>
+                </a>
+                <a href="./public/birthday-invite.html" class="project-card">
+                    <div class="project-icon">🎉</div>
+                    <h3>Birthday Invitation</h3>
+                    <p>Creative digital invitation with custom design</p>
+                    <span class="project-link">See Design →</span>
+                </a>
+            </div>
+            <div class="text-center">
+                <a href="https://docs.google.com/document/d/1KRcbjxvVsZQ8SyFeazz7H9y1-fuAhg2SNl0GGnrmNK0/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View All Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="section section-dark">
+        <div class="container">
+            <h2 class="section-title">Achievements & Recognition</h2>
+            <div class="achievements-list">
+                <div class="achievement-card">
+                    <div class="achievement-icon">🏆</div>
+                    <div class="achievement-content">
+                        <h3>1st Prize - Project Expo</h3>
+                        <p>Won first place at college tech competition for innovative project presentation</p>
+                        <a href="https://www.linkedin.com/posts/tagorepriyan_techcompetition-innovation-teamwork-activity-7202700508401131520-3s97?utm_source=share&utm_medium=member_desktop" target="_blank" rel="noopener noreferrer" class="achievement-link">View on LinkedIn →</a>
+                    </div>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon">🎓</div>
+                    <div class="achievement-content">
+                        <h3>St. Joseph's College of Engineering</h3>
+                        <p>Pursuing B.E. with focus on Full Stack Development and emerging technologies</p>
+                    </div>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon">📜</div>
+                    <div class="achievement-content">
+                        <h3>Continuous Learning</h3>
+                        <p>Multiple certifications in Web Development, Data Science, and Programming</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Let's collaborate on your next project or just have a chat about tech!</p>
+            <div class="contact-buttons">
+                <a href="./public/contact.html" class="btn btn-primary btn-glow">Contact Me</a>
+                <a href="mailto:tagorepryansaravanavel@gmail.com" class="btn btn-outline">Send Email</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Tagorepriyan. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://github.com/tagorepriyan" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a>
+                <a href="https://www.linkedin.com/in/tagorepriyan" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
+            </div>
+        </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+        ↑
+    </button>
+
+    <script src="script.js"></script>
 </body>
 </html>
