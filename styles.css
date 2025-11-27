@@ -285,6 +285,14 @@ a:hover {
 .delay-4 { animation-delay: 0.8s; }
 
 /* ========================
+     Reduced Motion Preference
+     ======================== */
+@media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+    .pulse { box-shadow: 0 0 30px rgba(157, 17, 204, 0.6); }
+}
+
+/* ========================
    Scroll Indicator
    ======================== */
 .scroll-indicator {
@@ -314,6 +322,10 @@ a:hover {
     background: var(--text-primary);
     border-radius: 2px;
     animation: scroll 1.5s infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .scroll-indicator span::before { animation: none; }
 }
 
 @keyframes scroll {
