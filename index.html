@@ -24,6 +24,7 @@
                 <li><a href="#achievements" class="nav-link">Achievements</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
+            <button id="themeToggle" class="btn btn-secondary" aria-label="Toggle light/dark mode" title="Toggle theme">🌙</button>
             <div class="hamburger" id="hamburger">
                 <span></span>
                 <span></span>
@@ -112,13 +113,13 @@
                     <p>Interactive web app showcasing my music preferences</p>
                     <span class="project-link">View Project →</span>
                 </a>
-                <a href="./public/fav_songs.html" class="project-card">
+                <a href="./public/demos/fav_songs.html" class="project-card">
                     <div class="project-icon">🎬</div>
                     <h3>Movie Database</h3>
                     <p>Curated collection of favorite movies with reviews</p>
                     <span class="project-link">Explore →</span>
                 </a>
-                <a href="./public/birthday-invite.html" class="project-card">
+                <a href="./public/demos/birthday-invite.html" class="project-card">
                     <div class="project-icon">🎉</div>
                     <h3>Birthday Invitation</h3>
                     <p>Creative digital invitation with custom design</p>
@@ -190,6 +191,15 @@
         ↑
     </button>
 
-    <script src="script.js"></script>
+        <script src="script.js"></script>
+        <script>
+            // Initialize theme early to avoid flash of wrong theme
+            (function() {
+                const stored = localStorage.getItem('theme');
+                const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                const theme = stored ? stored : (prefersDark ? 'dark' : 'light');
+                document.documentElement.setAttribute('data-theme', theme);
+            })();
+        </script>
 </body>
 </html>

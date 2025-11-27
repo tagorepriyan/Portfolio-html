@@ -29,6 +29,7 @@ window.goBack = goBack;
 // =============================
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
+const themeToggle = document.getElementById('themeToggle');
 
 if (hamburger && navMenu) {
   hamburger.addEventListener('click', () => {
@@ -128,6 +129,34 @@ function setActiveLink() {
 
 window.addEventListener('scroll', setActiveLink);
 window.addEventListener('load', setActiveLink);
+
+// =============================
+// Theme Toggle + Persistence
+// =============================
+function applyTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  localStorage.setItem('theme', theme);
+  if (themeToggle) {
+    themeToggle.textContent = theme === 'dark' ? '🌙' : '☀️';
+    themeToggle.setAttribute('aria-pressed', theme === 'dark');
+  }
+}
+
+function initTheme() {
+  const stored = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const theme = stored ? stored : (prefersDark ? 'dark' : 'light');
+  applyTheme(theme);
+}
+
+if (themeToggle) {
+  initTheme();
+  themeToggle.addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-theme') || 'light';
+    const next = current === 'dark' ? 'light' : 'dark';
+    applyTheme(next);
+  });
+}
 
 // =============================
 // Keyboard Accessibility Enhancements

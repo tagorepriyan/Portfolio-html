@@ -3,27 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Me</title>
+    <meta name="description" content="Contact Tagorepriyan - Full Stack Web Developer">
+    <title>Contact Me - Tagorepriyan</title>
     <link rel="stylesheet" href="../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1><b>Contact Me</b></h1>
-    <div class="contact-container">
-        <p><b>Phone no.:</b> +91 6383759915</p>
-        <button class="btn copy-button btn-gradient-border btn-glow" onclick="copyPhoneNumber()">Copy Phone Number</button>
-        <p><b>Email:</b> tagorepryansaravanavel@gmail.com</p>
-        <button class="btn copy-button btn-gradient-border btn-glow" onclick="copyEmail()">Copy Email</button>
-        <p><b>Address:</b></p>
-        <p>
-            No.2, Azhagu garden <br />
-            Patchannapuram<br />
-            Lalgudi, Tiruchirapalli - 621601 <br />
-        </p>
-        <button class="btn btn-gradient-border btn-glow" onclick="goBack()">Go Back</button>
-    </div>
-    <footer>
-        &copy; 2023 Tagorepriyan. All rights reserved.
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html#home" class="nav-logo">Tagorepriyan</a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../index.html#home" class="nav-link">Home</a></li>
+                <li><a href="../index.html#about" class="nav-link">About</a></li>
+                <li><a href="../index.html#skills" class="nav-link">Skills</a></li>
+                <li><a href="../index.html#projects" class="nav-link">Projects</a></li>
+                <li><a href="../index.html#achievements" class="nav-link">Achievements</a></li>
+                <li><a href="../index.html#contact" class="nav-link active">Contact</a></li>
+            </ul>
+            <button id="themeToggle" class="btn btn-secondary" aria-label="Toggle light/dark mode" title="Toggle theme">🌙</button>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Content -->
+    <section class="section" style="padding-top: 7rem;">
+        <div class="container">
+            <h1 class="section-title">Get In Touch</h1>
+            <p class="section-subtitle">Reach out via phone or email, or send a quick message.</p>
+
+            <div class="contact-buttons">
+                <button class="btn btn-primary btn-glow" onclick="copyPhoneNumber()">Copy Phone: +91 6383759915</button>
+                <button class="btn btn-outline" onclick="copyEmail()">Copy Email: tagorepryansaravanavel@gmail.com</button>
+                <a href="mailto:tagorepryansaravanavel@gmail.com" class="btn btn-secondary">Open Mail App</a>
+            </div>
+
+            <div class="contact-container" style="margin-top:2rem;">
+                <p><b>Address:</b></p>
+                <p>
+                    No.2, Azhagu garden <br />
+                    Patchannapuram<br />
+                    Lalgudi, Tiruchirapalli - 621601 <br />
+                </p>
+                <div class="text-center">
+                    <a class="btn btn-outline btn-glow" onclick="goBack()">← Back to Home</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Tagorepriyan. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://github.com/tagorepriyan" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a>
+                <a href="https://www.linkedin.com/in/tagorepriyan" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
+            </div>
+        </div>
     </footer>
+
     <script src="../script.js"></script>
+    <script>
+      // Initialize theme early to avoid flash of wrong theme
+      (function() {
+        const stored = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = stored ? stored : (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script>
 </body>
 </html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Birthday Invitation — Demo project by Tagorepriyan">
+  <title>Demo: Birthday Invitation</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="../../index.html#home" class="nav-logo">Tagorepriyan</a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="../../index.html#home" class="nav-link">Home</a></li>
+        <li><a href="../../index.html#projects" class="nav-link active">Projects</a></li>
+      </ul>
+      <button id="themeToggle" class="btn btn-secondary" aria-label="Toggle light/dark mode" title="Toggle theme">🌙</button>
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <section class="section" style="padding-top:7rem;">
+    <div class="container">
+      <h1 class="section-title">It's My Birthday! 🎉</h1>
+      <p class="section-subtitle">You're invited — here's all the info, with a responsive GIF embed.</p>
+
+      <h2 class="hero-subtitle" style="text-align:center;">On the 29th November</h2>
+
+      <div class="embed-responsive">
+        <div class="embed-inner ratio-16x9">
+          <iframe allow="fullscreen" frameborder="0" src="https://giphy.com/embed/fpWXwbGu3fjY59k4GT/video" loading="lazy"></iframe>
+        </div>
+      </div>
+
+      <div style="max-width:700px;margin:1.5rem auto;color:var(--text-secondary);">
+        <h3>What to bring:</h3>
+        <ul>
+          <li>Balloons 🎈 (I love balloons)</li>
+          <li>Cake 🎂 (I'm really good at eating)</li>
+          <li>An appetite 🍽️ (There will be lots of food)</li>
+        </ul>
+        <h3>Location</h3>
+        <a class="btn btn-primary btn-glow" href="https://goo.gl/maps/Bh9eA78QtKFRGaUU8" target="_blank" rel="noopener noreferrer">Open Google Maps 🗺️</a>
+      </div>
+
+      <div class="text-center" style="margin-top:2rem;">
+        <a class="btn btn-outline btn-glow" onclick="goBack()">← Back to Home</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2025 Tagorepriyan. All rights reserved.</p>
+      <div class="social-links">
+        <a href="https://github.com/tagorepriyan" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a>
+        <a href="https://www.linkedin.com/in/tagorepriyan" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../script.js"></script>
+  <script>
+    (function() {
+      const stored = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = stored ? stored : (prefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+</body>
+</html>

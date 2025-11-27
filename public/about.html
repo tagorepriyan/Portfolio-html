@@ -1,35 +1,73 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About Tagorepriyan - Full Stack Web Developer">
   <title>About Me - Tagorepriyan</title>
   <link rel="stylesheet" href="../styles.css">
-  <style>
-
-    h1 {
-      font-size: 40px;
-      text-transform: uppercase;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    }
-
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h1>About me</h1>
-  <div>
-    <p>I'm Tagorepriyan, a passionate web developer pushing the boundaries of digital creativity. After excelling in my 12th standard, I joined St. Joseph's College of Engineering in Chennai to further explore the dynamic world of web development.</p>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="../index.html#home" class="nav-logo">Tagorepriyan</a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="../index.html#home" class="nav-link">Home</a></li>
+        <li><a href="../index.html#about" class="nav-link active">About</a></li>
+        <li><a href="../index.html#skills" class="nav-link">Skills</a></li>
+        <li><a href="../index.html#projects" class="nav-link">Projects</a></li>
+        <li><a href="../index.html#achievements" class="nav-link">Achievements</a></li>
+        <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <button id="themeToggle" class="btn btn-secondary" aria-label="Toggle light/dark mode" title="Toggle theme">🌙</button>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
 
-<p>Proficient in HTML, CSS, JavaScript, I craft responsive designs and intuitive interfaces that blend aesthetics with seamless functionality.</p>
+  <!-- About Page Content -->
+  <section class="section" style="padding-top: 7rem;">
+    <div class="container">
+      <h1 class="section-title">About Me</h1>
+      <div class="about-content">
+        <img src="../assets/images/WhatsApp Image 2023-07-02 at 11.04.22.jpg" alt="Tagorepriyan Profile Photo" class="profile-photo" />
+        <p class="about-text">I'm Tagorepriyan, a passionate <strong>Full Stack Web Developer</strong> pushing the boundaries of digital creativity. I study at <strong>St. Joseph's College of Engineering, Chennai</strong>, where I explore the dynamic world of modern web development.</p>
+        <p class="about-text">I craft responsive, accessible, and engaging experiences using <strong>HTML, CSS, JavaScript, React, Node.js, Express, and MongoDB</strong>. I care deeply about performance, usability, and clean, maintainable code.</p>
+        <p class="about-text">Beyond coding, I enjoy learning new technologies, collaborating on impactful projects, and turning ideas into immersive digital products.</p>
+        <div class="text-center">
+          <a class="btn btn-outline btn-glow" onclick="goBack()">← Back to Home</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<p>With a relentless drive for learning and innovation, I continually hone my skills, transforming ideas into immersive digital experiences.</p>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2025 Tagorepriyan. All rights reserved.</p>
+      <div class="social-links">
+        <a href="https://github.com/tagorepriyan" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a>
+        <a href="https://www.linkedin.com/in/tagorepriyan" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
 
-    <img src="../assets/images/WhatsApp Image 2023-07-02 at 11.04.22.jpg" alt="Profile Photo" class="profile-photo">
-
-    <a class="btn btn-gradient-border btn-glow" onclick="goBack()">Go Back</a>
-  </div>
-
-<footer>
-    &copy; 2023 Tagorepriyan. All rights reserved.
-</footer>
-<script src="../script.js"></script>
+  <script src="../script.js"></script>
+  <script>
+    // Initialize theme early to avoid flash of wrong theme
+    (function() {
+      const stored = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = stored ? stored : (prefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
 </body>
 </html>
