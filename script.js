@@ -1,183 +1,41 @@
-// =============================
-// Utility: Copy Functions
-// =============================
-function copyPhoneNumber() {
-  const phoneNumber = '+91 9080609250';
-  navigator.clipboard.writeText(phoneNumber).then(() => {
-    alert('Phone number copied to clipboard!');
-  }).catch(err => console.error('Copy failed', err));
+// Highlight the nav link for the section currently in view
+const links = document.querySelectorAll('.profile nav a');
+const sections = [...document.querySelectorAll('main section[id]')];
+
+function setActive() {
+  const marker = window.scrollY + window.innerHeight * 0.3;
+  let current = sections[0].id;
+  for (const s of sections) {
+    if (s.offsetTop <= marker) current = s.id;
+  }
+  if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 4) {
+    current = sections[sections.length - 1].id;
+  }
+  links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current));
+}
+window.addEventListener('scroll', setActive, { passive: true });
+window.addEventListener('resize', setActive);
+setActive();
+
+// Copy email with an inline confirmation
+const EMAIL = 'tagorepriyansaravanavel@gmail.com';
+const copyBtn = document.getElementById('copyEmail');
+const toast = document.getElementById('toast');
+let timer;
+
+function say(msg) {
+  toast.textContent = msg;
+  clearTimeout(timer);
+  timer = setTimeout(() => (toast.textContent = ''), 3000);
 }
 
-function copyEmail() {
-  const email = 'tagorkarthi2005@gmail.com';
-  navigator.clipboard.writeText(email).then(() => {
-    alert('Email address copied to clipboard!');
-  }).catch(err => console.error('Copy failed', err));
-}
-
-function goBack() {
-  window.location.href = '/index.html';
-}
-
-// Expose functions globally (for inline HTML onclick usage)
-window.copyPhoneNumber = copyPhoneNumber;
-window.copyEmail = copyEmail;
-window.goBack = goBack;
-
-// =============================
-// Navigation & Hamburger Menu
-// =============================
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
-const themeToggle = document.getElementById('themeToggle');
-
-if (hamburger && navMenu) {
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
-  });
-
-  // Close menu when a link is clicked (mobile UX)
-  navMenu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      hamburger.classList.remove('active');
-      navMenu.classList.remove('active');
-    });
-  });
-}
-
-// =============================
-// Smooth Scroll Enhancement
-// =============================
-const internalLinks = document.querySelectorAll('a[href^="#"]');
-internalLinks.forEach(link => {
-  link.addEventListener('click', e => {
-    const targetId = link.getAttribute('href').substring(1);
-    const targetEl = document.getElementById(targetId);
-    if (targetEl) {
-      e.preventDefault();
-      const yOffset = -70; // Account for fixed navbar
-      const yPosition = targetEl.getBoundingClientRect().top + window.pageYOffset + yOffset;
-      window.scrollTo({ top: yPosition, behavior: 'smooth' });
-    }
-  });
+copyBtn.addEventListener('click', async () => {
+  try {
+    await navigator.clipboard.writeText(EMAIL);
+    say('Email copied.');
+  } catch {
+    say('Copy failed. Select the address above and copy it manually.');
+  }
 });
 
-// =============================
-// Back To Top Button
-// =============================
-const backToTopBtn = document.querySelector('.back-to-top');
-if (backToTopBtn) {
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 400) {
-      backToTopBtn.classList.add('visible');
-    } else {
-      backToTopBtn.classList.remove('visible');
-    }
-  });
-
-  backToTopBtn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-}
-
-// =============================
-// Intersection Observer Animations
-// =============================
-const animatedElements = document.querySelectorAll('.skill-card, .project-card, .achievement-card');
-const fadeInOptions = {
-  threshold: 0.15
-};
-
-const onEntry = (entries, observer) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('slide-up');
-      observer.unobserve(entry.target);
-    }
-  });
-};
-
-if ('IntersectionObserver' in window) {
-  const observer = new IntersectionObserver(onEntry, fadeInOptions);
-  animatedElements.forEach(el => observer.observe(el));
-}
-
-// =============================
-// Active Nav Link Highlighting
-// =============================
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-link');
-
-function setActiveLink() {
-  let currentId = null;
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop - 100; // offset for fixed nav
-    const sectionHeight = section.offsetHeight;
-    if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-      currentId = section.getAttribute('id');
-    }
-  });
-  navLinks.forEach(link => {
-    if (link.getAttribute('href') === `#${currentId}`) {
-      link.classList.add('active');
-    } else {
-      link.classList.remove('active');
-    }
-  });
-}
-
-window.addEventListener('scroll', setActiveLink);
-window.addEventListener('load', setActiveLink);
-
-// =============================
-// Theme Toggle + Persistence
-// =============================
-function applyTheme(theme) {
-  document.documentElement.setAttribute('data-theme', theme);
-  localStorage.setItem('theme', theme);
-  if (themeToggle) {
-    themeToggle.textContent = theme === 'dark' ? '🌙' : '☀️';
-    themeToggle.setAttribute('aria-pressed', theme === 'dark');
-  }
-}
-
-function initTheme() {
-  const stored = localStorage.getItem('theme');
-  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-  const theme = stored ? stored : (prefersDark ? 'dark' : 'light');
-  applyTheme(theme);
-}
-
-if (themeToggle) {
-  initTheme();
-  themeToggle.addEventListener('click', () => {
-    const current = document.documentElement.getAttribute('data-theme') || 'light';
-    const next = current === 'dark' ? 'light' : 'dark';
-    applyTheme(next);
-  });
-}
-
-// =============================
-// Keyboard Accessibility Enhancements
-// =============================
-if (hamburger) {
-  hamburger.addEventListener('keydown', e => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      hamburger.click();
-    }
-  });
-}
-
-// =============================
-// Graceful Degradation: Fallback Animations
-// =============================
-if (!('IntersectionObserver' in window)) {
-  animatedElements.forEach(el => el.classList.add('slide-up'));
-}
-
-// =============================
-// Console Banner
-// =============================
-console.log('%cPortfolio Loaded', 'background: #6A0DAD; color: #fff; padding: 6px 12px; border-radius: 4px;');
+document.getElementById('year').textContent = new Date().getFullYear();
